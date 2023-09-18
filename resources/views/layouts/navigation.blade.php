@@ -16,7 +16,6 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     <x-nav-link :href="route('permission.index')" :active="request()->routeIs('permission.index')">
-                        {{--                        {{ __('Permission') }}--}}
                         {{ __('Permissions') }}
                     </x-nav-link>
                     <x-nav-link :href="route('role.index')" :active="request()->routeIs('role.index')">
@@ -91,7 +90,6 @@
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('permission.index')" :active="request()->routeIs('permission.index')">
-                {{--                {{ __('Permission') }}--}}
                 {{ __('Permissions') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('role.index')" :active="request()->routeIs('role.index')">
@@ -118,7 +116,6 @@
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-
                     <x-responsive-nav-link :href="route('logout')"
                                            onclick="event.preventDefault();
                                         this.closest('form').submit();">
