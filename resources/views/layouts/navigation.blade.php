@@ -20,10 +20,10 @@
                         {{ __('Permissions') }}
                     </x-nav-link>
                     <x-nav-link :href="route('role.index')" :active="request()->routeIs('role.index')">
-                         {{ __('Roles') }}
+                        {{ __('Roles') }}
                     </x-nav-link>
                     <x-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')">
-                         {{ __('Users') }}
+                        {{ __('Users') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -48,6 +48,12 @@
                     </x-slot>
 
                     <x-slot name="content">
+                        <x-dropdown-link :href="route('admin.account.info')"
+                                         :active="request()->routeIs('admin.account.info')">
+                            {{ __('My Account') }}
+                        </x-dropdown-link>
+
+
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
@@ -104,6 +110,11 @@
             </div>
 
             <div class="mt-3 space-y-1">
+                <x-responsive-nav-link :href="route('admin.account.info')"
+                                       :active="request()->routeIs('admin.account.info')">
+                    {{ __('My Account') }}
+                </x-responsive-nav-link>
+
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
